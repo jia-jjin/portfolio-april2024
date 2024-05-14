@@ -1,0 +1,152 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+.slider {
+  position: relative;
+  width: 100vw;
+  height: 400px;
+  overflow: hidden;
+}
+.item {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  text-align: justify;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.5s;
+  left: calc(50% - 150px);
+  top: calc(50% - 180px);
+  z-index: 100;
+  display: flex;
+}
+@media (max-width: 500px) {
+  .item {
+    width: 200px;
+    height: 200px;
+  }
+}
+#next,
+#prev {
+  position: absolute;
+  top: 40%;
+  color: white;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 100%;
+  font-size: xxx-large;
+  font-family: monospace;
+  font-weight: bold;
+  left: calc(50% - 200px);
+  transform: translate(-50%, 0);
+  z-index: 2;
+}
+#next {
+  left: unset;
+  right: calc(50% - 200px);
+  transform: translate(50%, 0);
+}
+
+@media (max-width: 500px) {
+  .item {
+    width: 200px;
+    height: 200px;
+  }
+  #next,
+  #prev {
+    top: 80%;
+    left: calc(50% - 50px);
+  }
+  #next {
+    left: unset;
+    right: calc(50% - 50px);
+  }
+}
+
+.item h1 {
+  font-weight: bolder;
+  font-size: x-large;
+  bottom: 0;
+  z-index: -1;
+  position: absolute;
+  line-height: 95%;
+  margin: 15px;
+  text-align: center;
+}
+
+.htmllogo,
+.csslogo,
+.jslogo,
+.pythonlogo,
+.androidlogo,
+.phplogo {
+  background-color: transparent;
+  border: none;
+}
+
+.htmlskill,
+.cssskill,
+.jsskill,
+.pythonskill,
+.androidskill,
+.phpskill {
+  opacity: 0;
+  transition: 300ms;
+}
+
+#project::after,
+#project::before {
+  content: "";
+  background: white;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 5px;
+  width: 0%;
+  transition: 500ms;
+}
+#project:hover::after,
+#project:hover::before {
+  left: 0%;
+  width: 100%;
+}
+#project::before {
+  bottom: unset;
+  top: 0;
+}
+
+#project .overlay::after,
+#project .overlay::before {
+  content: "";
+  background: white;
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  height: 0%;
+  width: 5px;
+  transition: 500ms;
+}
+
+#project:hover .overlay::after,
+#project:hover .overlay::before {
+  bottom: 0%;
+  height: 100%;
+}
+#project .overlay::before {
+  left: unset;
+  right: 0;
+}
+
+#skillsmoreinfopanel {
+  opacity: 0;
+  transition: 300ms;
+}
